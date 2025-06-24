@@ -14,7 +14,7 @@ class SearchQueryController extends PersistentController {
   @override
   String get id => 'search_query';
 
-  // When the query hits around 50 characters, the bitap algorithm
+  // When the query hits around 50 characters, the bitmap algorithm
   // leads to weird results. So we limit the query length.
   static const int maxQueryLength = 42;
 
