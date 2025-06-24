@@ -1,4 +1,4 @@
-import 'package:fuzzy/bitap/bitap.dart';
+import 'package:fuzzy/bitmap/bitmap.dart';
 import 'package:fuzzy/data/fuzzy_options.dart';
 import 'package:werkbank/src/werkbank_internal.dart';
 
@@ -45,7 +45,7 @@ class FuzzySearchEntry extends SearchEntry implements FuzzySearchData {
 
   @override
   SearchResultEntry evaluate(String query) {
-    final bitap = Bitap(
+    final bitmap = Bitmap(
       query,
       options: FuzzyOptions(
         threshold: scoreThreshold,
@@ -53,7 +53,7 @@ class FuzzySearchEntry extends SearchEntry implements FuzzySearchData {
       ),
     );
 
-    final matchScore = bitap.search(searchString);
+    final matchScore = bitmap.search(searchString);
 
     return FuzzySearchEntryResult(
       searchString: searchString,
